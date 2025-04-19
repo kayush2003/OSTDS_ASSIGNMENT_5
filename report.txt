@@ -1,0 +1,70 @@
+Retail Sales Analysis Report
+=============================
+
+Objective:
+----------
+To analyze retail sales data using Apache Spark for actionable insights related to:
+- Inventory Management
+- Marketing Strategy Optimization
+- Customer Satisfaction
+
+Dataset:
+--------
+The dataset includes the following attributes:
+- TransactionID, Date, CustomerID, Gender, Age, Product Category, Quantity, Price per Unit, Total Amount, StoreID
+
+1. Data Ingestion & Cleaning:
+-----------------------------
+- Loaded CSV into Spark using `spark.read.csv()`.
+- Handled missing values using `dropna()`.
+- Removed duplicate records using `dropDuplicates()`.
+- Parsed the `Date` column into proper date format.
+
+2. Data Transformation (Using Spark SQL/DataFrame API):
+--------------------------------------------------------
+- Aggregated sales per Product Category, Store, and Customer.
+- Extracted Month and Year from the Date column for time-based analysis.
+
+3. Analysis & Insights:
+-----------------------
+a) Top-Selling Products:
+   - Product categories with the highest revenue identified.
+   - Useful for inventory focus and promotions.
+
+b) Top-Performing Stores:
+   - Stores with the highest sales highlighted.
+   - Guides investment and performance benchmarking.
+
+c) Most Valuable Customers:
+   - Customers with highest purchase totals recognized.
+   - Useful for loyalty programs and personalized marketing.
+
+d) Monthly Sales Trend:
+   - Sales patterns over time visualized.
+   - Helps in identifying seasonal peaks.
+
+4. Visualizations:
+------------------
+- A line chart was generated showing monthly sales trends.
+- Saved as: `monthly_sales_trend.png`
+
+5. Optimization Techniques:
+---------------------------
+- Used `.cache()` for reused datasets.
+- Used `.repartition("StoreID")` for performance tuning.
+- Mentioned best practices like broadcast joins for small tables.
+
+Recommendations:
+----------------
+- Stock up on top-selling product categories before peak months.
+- Reward and retain high-value customers.
+- Invest more in top-performing stores and replicate their strategies.
+- Align promotions and campaigns with seasonal sales trends.
+
+Tools Used:
+-----------
+- Apache Spark (PySpark)
+- Python
+- Matplotlib (for visualization)
+
+Submitted by: Ayush Kumar
